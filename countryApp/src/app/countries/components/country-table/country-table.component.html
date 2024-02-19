@@ -1,0 +1,35 @@
+<div *ngIf="countries.length === 0; else table" class="alert alert-warning text-center">
+    No hay países que mostrar...
+</div>
+
+<ng-template #table>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Flag</th>
+                <th>Icono</th>
+                <th>Name</th>
+                <th>Capital</th>
+                <th>Population</th>
+                <th>Ver más</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dato of countries; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td><img [src]="dato.flags.png" alt="{{ dato.flags.alt }} Flag" width="50" height="30" /></td>
+                <td><img [src]="dato.coatOfArms.svg" alt="icono of {{dato.name.common}}" width="30" height="30"></td>
+                <td>{{ dato.name.common }}</td>
+                <td>{{ dato.capital }}</td>
+                <td>{{ dato.population | number }}</td>
+                <!-- <td><a [routerLink]="['/country/alpha/', dato.ccn3]">Ver más...</a></td> -->
+                <td><a [routerLink]="['/countries/country/', dato.ccn3]" routerLinkActive="active">Ver más...</a></td>
+                <!-- <td><button (click)="verMas(dato.ccn3)">Ver más...</button></td> -->
+                <!-- <td><a href="https://es.wikipedia.org/wiki/%7B%7B dato.capital }}" target="_blank">Ver más...</a></td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>
+</ng-template>

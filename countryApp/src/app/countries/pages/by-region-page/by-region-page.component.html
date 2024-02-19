@@ -1,0 +1,7 @@
+<div>
+    <h1>Region</h1>
+    <app-searchBox (searchTextChange)="handleSearchTextChange($event)" [placeholder]="'Region'" ></app-searchBox>
+</div>
+<div>
+    <app-country-table [countries]="countries"></app-country-table>
+</div>

@@ -1,0 +1,8 @@
+<div>
+    <h1>By Capital Page</h1>
+    <app-searchBox (searchTextChange)="handleSearchTextChange($event)" [placeholder]="'capital'" ></app-searchBox>  
+    
+</div>
+<div>
+    <app-country-table [countries]="countries"></app-country-table>
+</div>

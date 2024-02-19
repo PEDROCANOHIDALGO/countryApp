@@ -1,0 +1,7 @@
+<div>
+    <h1>Por Paises</h1>
+    <app-searchBox (searchTextChange)="handleSearchTextChange($event)" [placeholder]="'Por Paises'" ></app-searchBox>
+</div>
+<div>
+    <app-country-table [countries]="countries"></app-country-table>
+</div>
